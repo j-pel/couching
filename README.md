@@ -8,4 +8,7 @@ There are some points that make CouchDB compelling for the web and relevant for 
 * Master/master replication.
 There are some drawbacks and poor design choices but in general is very well conceived and is a fit for many web needs.
 
-In one way or another, it will be some form of CouchDB for years to come
+In one way or another, CouchDB is going to be relevant in one form or another for years to come.
+
+## Scope
+Couching is a project to ease the use of CouchDB from a web browser. A library to access and modify data stored in a database, modify indexes and views to the data and enable permissions and restrict access to the data.
