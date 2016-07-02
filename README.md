@@ -12,3 +12,7 @@ In one way or another, CouchDB is going to be relevant in one form or another fo
 
 ## Scope
 Couching is a project to ease the use of CouchDB from a web browser. A library to access and modify data stored in a database, modify indexes and views to the data and enable permissions and restrict access to the data.
+
+Main access to the REST API is through promises. Each database connection could be queried, modified, created or deleted asynchronously. Multiple databases from different nodes could be connected at once.
+
+There is an html tool to add or modify views, shows and lists. Results are dynamically presented.
