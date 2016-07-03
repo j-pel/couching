@@ -18,14 +18,13 @@ Main access to the REST API is through promises. Each database connection could 
 There is an html tool to add or modify views, shows and lists. Results are dynamically presented.
 
 ## Usage
-###Couching(server)
 
+###Couching(server)
 Starts or changes the database handler to a specific server.
 It verifies that the server is a proper CouchDB instance and
 opens or create the database of given name.
 
 ###login(user)
-
 To verify user credentials to the system and start a session for
 the given user. If the credentials are incorrect, the session
 is closed and the database is in visitors' access state.
@@ -33,27 +32,22 @@ A Promise is returned with the given authorization or an error.
 {user} object containing user.name and user.password.
 
 ###create()
-
 To create a new database on the CouchDB instance.
 It works only if the logged user has admin capabilities.
 
 ###clear()
-
 To delete the entire database from CouchDB instance.
 It works only if the logged user has admin capabilities.
 
 ###restart()
-
 To restart current CouchDB server.
 A Promise is returned with the required information or error.
 
 ###session()
-
 To get the current session information from CouchDB.
 A Promise is returned with the required information or error.
 
 ###head(id)
-
 The lightest and fastest call to seek for a document knowing its
 id. It will return the header information as a javascript object
 with a property called ETag with the current revision number
@@ -63,7 +57,6 @@ A Promise is returned with the required header or error message.
 @param {id} document internal id.
 
 ###get(id)
-
 To retrieve the document with given id. It will return the current
 document as a javascript object if the document exists. Otherwise,
 it will return {Error: not found}.
@@ -71,7 +64,6 @@ A Promise is returned with the required document or error message.
 @param {id} document internal id.
 
 ###uuid(count)
-
 Requests one or more Universally Unique Identifiers (UUIDs) from
 the CouchDB instance. The response is a JSON object providing a
 list of UUIDs.
@@ -79,7 +71,6 @@ A Promise is returned with an array with the UUIDs.
 @param {count} Number of UUIDs to return. Default is 1.
 
 ###delete(id)
-
 To delete the document with given id. Document current revision is
 obtained by HEAD request to the database.
 If successful, it will return the revision id for the deletion stub.
@@ -94,8 +85,7 @@ deleted a document, or the reason you deleted it. (Implementation
 of the latter is pending)
 @param {id} document internal id.
 
-##put(doc)
-
+###put(doc)
 To store new documents into the database or to revise an existing
 document. If the document does not contain an id, a new uuid is
 assigned.
