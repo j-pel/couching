@@ -18,14 +18,21 @@ Main access to the REST API is through promises. Each database connection could 
 There is an html tool to add or modify views, shows and lists. Results are dynamically presented.
 
 ## Usage
-Couching(server)
+###Couching(server)
+
 Starts or changes the database handler to a specific server.
 It verifies that the server is a proper CouchDB instance and
 opens or create the database of given name.
 
-login(user)
+###login(user)
+
 To verify user credentials to the system and start a session for
 the given user. If the credentials are incorrect, the session
 is closed and the database is in visitors' access state.
 A Promise is returned with the given authorization or an error.
 {user} object containing user.name and user.password.
+
+###create()
+
+To create a new database on the CouchDB instance.
+It works only if the logged user has admin capabilities.
