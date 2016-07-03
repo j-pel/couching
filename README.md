@@ -95,3 +95,23 @@ If the document exists, a new revision is generated.
 A Promise is returned with the response from CouchDB.
 
 @param {doc} document as a javascript object.
+
+###post(doc)
+To store new documents into the database. Unlike put call, it will
+always create a new document with an id that is assigned during
+document creation. If doc._id is passed, it is discarded.
+This implementation does not use the POST method. The reason comes
+from CouchDB docs: "It is recommended that you avoid POST when
+possible, because proxies and other network intermediaries will
+occasionally resend POST requests, which can result in duplicate
+document creation."
+A Promise is returned with the response from CouchDB.
+@param {doc} document as a javascript object.
+
+###query(view, options)
+To query a map design/view on the database considering the
+options' values. The resulted documents will be passed
+to the callback function.
+A Promise is returned with the query result from CouchDB.
+@param {view} name of the design/view as defined on database.
+@param {options} query options as a javascript object.
