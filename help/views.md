@@ -1,7 +1,26 @@
 #Views
 CouchDB available docs are dense, vast but incomplete. This is an attempt to document each feature from end to end.
 ##Erlang native query server
-Bear in mind that the native query server is not sandboxed and have access to the whole Erlang VM. That is, it will have access to the whole server's Operating System.
+Bear in mind that the native query server is not sandboxed and have access to the whole Erlang VM. That is, it will have access to the whole server's Operating System. [http://couchdb.readthedocs.io/en/latest/config/query-servers.html#config-native-query-servers]
+
+This is how a working design document using erlang should look:
+```javascript
+{
+   "_id": "_design/testing",
+   "_rev": "3-5139aa3cec31ed5edc9ab11139c7b4ea",
+   "language": "erlang",
+   "views": {
+       "rev": {
+          "map": "fun({Doc}) -> \
+            <<K,_/binary>> = proplists:get_value(<<\"_rev\">>, Doc, null),\
+            V = proplists:get_value(<<\"_id\">>, Doc, null),\
+            Emit(<<K>>, V)\
+            end.",
+           "reduce": "fun(Keys, Values, ReReduce) -> length(Values) end."
+       }
+   }
+}
+```
 ### Handling JSON structures from Erlang
 [http://jamietalbot.com/2010/03/18/handling-json-objects-in-couchdb-native-erlang-views/]
 
