@@ -25,7 +25,7 @@ This is how a working design document using erlang should look:
 [http://jamietalbot.com/2010/03/18/handling-json-objects-in-couchdb-native-erlang-views/]
 
 ### BuiltIn reduce functions
-CouchDB has three built-in reduce functions. These are implemented in Erlang and run right inside CouchDB, so they are much faster than the equivalent JavaScript functions.
+CouchDB has three built-in reduce functions: _count, _sum and _stats. These are implemented in Erlang and run right inside CouchDB, so they are much faster than the equivalent JavaScript functions.
 [http://wiki.apache.org/couchdb/Built-In_Reduce_Functions]
 ```javascript
 {
