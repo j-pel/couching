@@ -54,7 +54,7 @@ with a property called ETag with the current revision number
 if the document exists. Otherwise, the object will have an error
 property plus the other header information.
 A Promise is returned with the required header or error message.
-@param {id} document internal id.
+id: document internal id.
 
 ###get(id)
 To retrieve the document with given id. It will return the current
